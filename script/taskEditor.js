@@ -3,6 +3,18 @@ const menuBtnAddTask = document.getElementById("menuBtnAddTask");
 const taskEditor = document.getElementById("taskEditor");
 const editorBtnCancel = document.getElementById("editorBtnCancel");
 menuBtnAddTask.addEventListener("click", () => {
+   //ADICIONANDO OS VALORES DA TASK PARA EDITAR
+   document.getElementById("taskId").value = 0;
+   document.getElementById("txtTaskName").value = "";
+   document.getElementById("slPriority").setAttribute("data-value",4);
+   document.getElementById("slTimer").setAttribute("data-value",0);
+   document.getElementById("slTag").setAttribute("data-value","none");
+   
+   //ALTERANDO OS VALORES NOS CAMPOS DO EDITOR
+   document.getElementById(`slPriority`).children[1].innerHTML = `Prioridade`;
+   document.getElementById(`slTimer`).children[1].innerHTML = `Timer`;
+   document.getElementById(`slTag`).children[1].innerHTML = `Tag`;
+ 
   taskEditor.style.display =
     taskEditor.style.display == "flex" ? "none" : "flex";
 });
@@ -37,10 +49,8 @@ createCustomSelect("slTimer", "optionsTimer");
 createCustomSelect("slTag", "optionsTag");
 
 //ADICIONAR NOVA TAREFA
-
 const btnSave = document.getElementById("editorBtnSave");
 const btnCancel = document.getElementById("editorBtnCancel");
-console.log(btnCancel);
 btnCancel.addEventListener("click",()=>{
   taskEditor.style.display = "none";
 });
@@ -80,24 +90,18 @@ btnSave.addEventListener("click", () => {
     body: formData,
   };
 
-  let endpoint = "./App/Model/addTask.php";
-
-  //UTILIZANDO A API DO PHP
-  // fetch(endpoint, header)
-  //   .then((response) => {
-  //     return response.json();
-  //   })
-  //   .then((response) => {
-  //     console.log(response);
-  //     window.location.reload();
-  //     // Swal.fire({
-  //     //   title: response['title'],
-  //     //   text: response['msg'],
-  //     //   icon: response['icon'],
-  //     // });
-  //   });
+  let endpoint = taskId == 0 ? "./App/Model/addTask.php" : "./App/Model/updateTask.php";
+  
+  // UTILIZANDO A API DO PHP
+  fetch(endpoint, header)
+    .then((response) => {
+       response.json();
+    })
+    .then((response) => {
+      window.location.reload();
+    });
      
-  // console.log(
-  //   `Text: ${taskText} | Timer: ${taskTimer} | Prio: ${taskPrio} | Tag: ${taskTag}`
-  // );
+  console.log(
+    `ID: ${taskId} | Text: ${taskText} | Timer: ${taskTimer} | Prio: ${taskPrio} | Tag: ${taskTag}`
+  );
 });

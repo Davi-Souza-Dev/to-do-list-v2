@@ -13,7 +13,7 @@
  
      //FAZENDO O TRAtAMENTO DO RESULTADO
      while($row = $stmt->fetch(\PDO::FETCH_ASSOC)){
-        $task = [$row["taskId"],$row["taskText"],$row["taskPrio"],$row["taskTimer"],$row["taskState"]];
+        $task = [$row["taskId"],$row["taskText"],$row["taskPrio"],$row["taskTimer"],$row["taskTag"]];
         $taskList[] = $task; 
      }
      echo json_encode($taskList);

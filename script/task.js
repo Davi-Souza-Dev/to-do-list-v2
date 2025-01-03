@@ -1,11 +1,11 @@
 class Task {
   constructor(id, taskText, taskPrio, taskTimer, taskTag) {
+    this.taskId = id;
     this.taskText = taskText;
     this.taskPrio = taskPrio;
     this.taskTimer = taskTimer; //Segundos da task
-    this.sec = 60; //segundos do timer
     this.taskTag = taskTag;
-    this.taskId = id;
+    this.sec = 60; //segundos do timer
     this.timer; //cronometro da task do timer
     this.start = false; //verifica de a tarefa começou
     this.createTask();
@@ -90,6 +90,9 @@ class Task {
     const btnDel = document.createElement("button");
     btnDel.setAttribute("class", "btnDel");
     btnDel.setAttribute("id", `btnDel_${this.taskId}`);
+    btnDel.addEventListener("click",()=>{
+      this.btnDelTask();
+    });
 
     const btnDelImg = document.createElement("img");
     btnDelImg.src = `images/deleteIcon.svg`;
@@ -181,7 +184,6 @@ class Task {
     fetch(endpoint)
       .then((response) => response.json())
       .then((response) => {
-        console.log(response);
         if (response["status"]) {
           this.me.remove();
         }
@@ -189,19 +191,40 @@ class Task {
   };
 
   btnEditTask = () => {
-    const optionContainer = document.getElementById(
-      `optionContainer_${this.taskId}`
-    );
 
-    optionContainer.style.display = "none";
     //ADICIONANDO OS VALORES DA TASK PARA EDITAR
+    document.getElementById("taskId").value = this.taskId;
     document.getElementById("txtTaskName").value = this.taskText;
     document.getElementById("slPriority").setAttribute("data-value",this.taskPrio);
     document.getElementById("slTimer").setAttribute("data-value",this.taskTimer);
     document.getElementById("slTag").setAttribute("data-value",this.taskTag);
+    
+    //ALTERANDO OS VALORES NOS CAMPOS DO EDITOR
+    document.getElementById(`slPriority`).children[1].innerHTML = `P${this.taskPrio}`;
+    document.getElementById(`slTimer`).children[1].innerHTML = `${this.taskTimer}:00`;
+    document.getElementById(`slTag`).children[1].innerHTML = `${this.taskTag}`;
 
+    //ESCONDER A CAIXA DE OPÇÔES
+    document.getElementById(`optionContainer_${this.taskId}`).style.display = "none";
+    //EXIBINDO O EDITOR
     document.getElementById("taskEditor").style.display = "flex";
+
+
   };
+
+  btnDelTask=()=>{
+    let formData = new FormData();
+    formData.append("taskId",this.taskId);
+
+    let header = {
+      method: "POST",
+      body: formData,
+    };
+
+    let endpoint = "./App/Model/deleteTask.php";
+    fetch(endpoint,header)
+    .then((response)=>response.status == 200 ? this.me.remove() : window.location.reload());
+  }
 }
 
 export default Task;

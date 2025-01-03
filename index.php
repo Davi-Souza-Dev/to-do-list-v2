@@ -115,6 +115,7 @@
             id="taskId"
             name="taskId"
             class="taskId"
+            value="0"
             hidden
             disabled
           />

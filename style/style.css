@@ -183,6 +183,7 @@
   border-radius: 5px;
   gap: 5px;
   position: absolute;
+  z-index: 100;
 }
 
 .optionsPriority li{

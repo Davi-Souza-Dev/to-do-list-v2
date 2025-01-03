@@ -1,0 +1,318 @@
+/* MOBILE FIRST */
+
+.menu {
+  width: 100%;
+  height: 50px;
+  background: var(--cor1);
+  border-radius: 20px 20px 0px 0px;
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 80px;
+}
+
+.menuBtnAddTask {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  outline-style: solid;
+  outline-color: var(--fundo);
+  outline-width: 10px;
+  background: var(--cor1);
+  position: absolute;
+  border: none;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuBtnAddTask > svg {
+  width: 80%;
+  height: 80%;
+}
+
+.menu > .btnLink {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnLink > svg {
+  width: 80%;
+  height: 80%;
+}
+
+.painel {
+  width: 100%;
+  height: 90%;
+  /* border: 2px dashed red; */
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+
+.finishedPainel {
+  width: fit-content;
+  height: fit-content;
+  background-color: var(--cor1);
+  border-radius: 10px;
+  margin: 10px 0px 0px 10px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.finishedPainel h1 {
+  font-size: 1.2rem;
+  font-family: var(--fontPrincipal);
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.divFinishCount {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: var(--cor3);
+  font-size: 1.2rem;
+  font-family: var(--fontPrincipal);
+  font-weight: bolder;
+  text-transform: uppercase;
+  color: var(--cor1);
+}
+
+/* CONTAINER FOR THE TASK */
+.taskList {
+  width: 90%;
+  height: 100%;
+  /* border: 2px dashed blue; */
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+/* CAMPO PARA EDITAR OU ADICIONAR TASKS */
+.taskEditor {
+  width: 100%;
+  height: fit-content;
+  border-radius: 5px;
+  border: 2px solid var(--cor1);
+  padding: 5px;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+}
+
+.taskEditor .taskInput {
+  width: 100%;
+  height: 20px;
+  background: none;
+  color: var(--cor1);
+  font-size: 1rem;
+  font-family: var(--fontPrincipal);
+  font-weight: bolder;
+  text-transform: uppercase;
+  outline: none;
+}
+
+.taskEditor .settingsContent{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.taskEditor .slPriority,.slTimer,.slTag{
+  width: fit-content;
+  height: fit-content;
+  background-color: var(--cor1);
+  padding: 2px 5px;
+  outline: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: var(--fontPrincipal);
+  font-weight: bolder;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+.iconOption{
+  width: 15px;
+  height: 15px;
+}
+
+.taskEditor .optionsPriority, .optionsTimer , .optionsTag{
+  width: fit-content;
+  height: fit-content;
+  list-style: none;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  border-radius: 5px;
+  gap: 5px;
+  position: absolute;
+}
+
+.optionsPriority li{
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: 2px solid var(--cor3);
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: var(--fontPrincipal);
+  font-weight: bolder;
+  text-transform: uppercase;
+  background: var(--fundo);
+}
+
+.optionsTimer li{
+  width: fit-content;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: 2px solid var(--cor3);
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: var(--fontPrincipal);
+  font-weight: bolder;
+  text-transform: uppercase;
+  background: var(--fundo);
+}
+
+.optionsTag li{
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  border: 2px solid var(--cor3);
+  border-radius: 5px;
+  font-size: 10px;
+  font-family: var(--fontPrincipal);
+  font-weight: bolder;
+  text-transform: uppercase;
+  background: var(--fundo);
+}
+
+
+.p1{
+  color: #BC1D17 !important;
+}
+.p1 svg path{
+  fill: #BC1D17 !important;
+}
+
+.p2{
+  color: #dfff3d !important;
+}
+
+.p2 svg path{
+  fill: #e2ff51 !important;
+}
+
+.p3{
+  color: #11AD2E !important;
+}
+
+.p3 svg path{
+  fill: #11AD2E !important;
+}
+
+.op1{
+  color: #BC1D17 !important;
+}
+.op1 svg path{
+  fill: #BC1D17 !important;
+}
+
+.op2{
+  color: #dfff3d !important;
+}
+.op2 svg path{
+  fill: #e2ff51 !important;
+}
+
+.op3{
+  color: #11AD2E !important;
+}
+
+.op3 svg path{
+  fill: #11AD2E !important;
+}
+
+.taskEditor .editorBtnContainer{
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.taskEditor button#editorBtnSave{
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: #00981B;
+  color: var(--cor1);
+  font-size: 1rem;
+  font-family: var(--fontPrincipal);
+  font-weight: bolder;
+  text-transform: uppercase;
+  outline: 2px solid #1AFF44;
+}
+
+
+.taskEditor button#editorBtnCancel{
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: #DF0901;
+  color: var(--cor1);
+  font-size: 1rem;
+  font-family: var(--fontPrincipal);
+  font-weight: bolder;
+  text-transform: uppercase;
+  outline: 2px solid #FF2F27;
+}

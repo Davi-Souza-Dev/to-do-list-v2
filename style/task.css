@@ -1,0 +1,158 @@
+/* MOBILE FIRST */
+/* CONFIGURATION  TASK*/
+.task {
+    width: 100%;
+    min-height: 35px;
+    max-height: fit-content;
+    background-color: var(--cor1);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    gap: 5px;
+    position: relative;
+  }
+  
+  .task button {
+    width: 15px;
+    height: 15px;
+    border-radius: 5px;
+  }
+  
+  .task > .btnCheck_p1{
+    outline: #ff0000 2px solid;
+    padding: 5px;
+  }
+
+  .task > .btnCheck_p1:active{
+    background: #ff9494;
+  }
+
+  .task > .btnCheck_p2{
+    outline: #eeff00 2px solid;
+    padding: 5px;
+  }
+
+  .task > .btnCheck_p2:active{
+    background: #faff50;
+  }
+
+  .task > .btnCheck_p3{
+    outline: #00e60a 2px solid;
+    padding: 5px;
+  }
+
+  .task > .btnCheck_p3:active{
+    background: #53ff50;
+  }
+  
+  
+  .task .taskContent,
+  p {
+    font-size: 14px;
+    font-family: var(--fontPrincipal);
+    font-weight: bolder;
+    text-transform: uppercase;
+  }
+  
+  .task .taskContent {
+    width: fit-content;
+    max-width: 50%;
+    overflow-wrap: break-word;
+    margin-right: 10px;
+  }
+  
+  .taskTimer {
+    width: fit-content;
+    height: 100%;
+    outline: var(--cor2) solid 2px;
+    display: flex;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 5px;
+    font-size: 14px;
+    font-family: var(--fontPrincipal);
+    font-weight: bolder;
+    text-transform: uppercase;
+  }
+
+  
+  .task .btnPlay {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+  }
+  
+  .task .btnPlay img {
+    width: 80%;
+    height: 80%;
+  }
+  
+  .task .btnShow {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    transform-origin: center center;
+  }
+  
+  .task .btnShow img {
+    width: 80%;
+    height: 80%;
+  }
+  
+  .taskOptions {
+    width: fit-content;
+    position: absolute;
+    right: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  
+  .btnShow:focus .optionContainer {
+    display: flex;
+  }
+  
+  .optionContainer {
+    width: fit-content;
+    height: fit-content;
+    display: none;
+    flex-direction: column;
+    /* border: 1px solid blue; */
+    background: var(--cor1);
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    z-index: 100;
+    border-radius: 5px;
+  }
+  
+  .optionContainer button {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    background: none;
+  }
+  
+  .optionContainer button:hover {
+    padding: 5px;
+    background: #7e7e7e;
+  }
+  
+  .optionContainer button img {
+    width: 15px;
+    height: 15px;
+  }
